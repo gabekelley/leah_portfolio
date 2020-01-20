@@ -1,0 +1,15 @@
+.container {
+    margin-left: -8px;
+    padding: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.box {
+    width: calc(100vh/2 - 8px);
+    height: calc(100vh/2 - 8px);
+    margin: 8px;
+    background: blue;
+}

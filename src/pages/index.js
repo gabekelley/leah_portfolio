@@ -4,6 +4,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Billboard from "../components/billboard/billboard"
+import IndexGrid from "../components/index-grid/index-grid"
 // import Button from "../components/button"  
 
 class IndexPage extends React.Component {
@@ -20,6 +21,7 @@ class IndexPage extends React.Component {
         {/* <Link to="/projects/">
           <Button marginTop="35px">Go to Projects</Button>
         </Link> */}
+        <IndexGrid />
       </Layout>
     )
   }
