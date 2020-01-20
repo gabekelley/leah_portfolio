@@ -1,43 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
+import Header from '../components/header/header'
 import styled from "styled-components"
-
-import { rhythm, scale } from "../utils/typography"
+import '../styles/styles.css'
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    const projectsPath = `${__PATH_PREFIX__}/projects/`
-    
-    let header
-
-    if (location.pathname === rootPath) {
-      header = (
-        <div></div>
-      )
-    } else {
-      header = (
-        <h1
-          style={{
-            ...scale(1),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={location.pathname === projectsPath ? `/projects/` : `/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    }
+    const { children } = this.props
     
     return (
       <Wrapper>
@@ -47,7 +15,7 @@ class Layout extends React.Component {
             marginRight: `auto`,
           }}
         >
-          <header>{header}</header>
+          <Header location={this.props.location} />
           <main>{children}</main>
         </div>
       </Wrapper>
@@ -55,8 +23,8 @@ class Layout extends React.Component {
   }
 }
 
+export default Layout
+
 const Wrapper = styled.div`
   min-height: 100vh;
 `
-
-export default Layout
