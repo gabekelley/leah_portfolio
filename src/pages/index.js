@@ -3,7 +3,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Billboard from "../components/billboard"
+import Billboard from "../components/billboard/billboard"
 // import Button from "../components/button"  
 
 class IndexPage extends React.Component {
