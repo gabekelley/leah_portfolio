@@ -4,6 +4,16 @@
     align-items: center;
     position: fixed;
     top: 0;
-    background: grey;
     width: 100%;
+}
+
+.container a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-shadow: none;
+}
+
+.thirdcolumn {
+    padding-right: 24px;
 }

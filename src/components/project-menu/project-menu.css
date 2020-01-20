@@ -1,0 +1,30 @@
+#slidemenu {
+  background: white;
+  font-family: sans-serif;
+  height: 100vh;
+  width: 60vw;
+  box-shadow: 4px 0px 4px rgba(34,34,34,0.3);
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+#slidemenu.show {
+    transform: translateX(0%);
+}
+
+#slidemenu ul {
+  list-style: none;
+}
+
+#slidemenu a {
+    color:black;
+    padding: 2rem 0;
+    text-decoration: none;
+    transition: color 0.3s linear;
+    box-shadow: none;
+}
