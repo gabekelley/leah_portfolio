@@ -57,7 +57,7 @@ class Header extends React.Component {
                 <ProjectMenu handleMouseDown={this.handleMouseDown}
                             visibility={this.state.visible} />
                 <Link to="/">Leah Schmidt</Link>
-                <div>
+                <div className={headerStyles.thirdcolumn}>
                     {thirdColumn}
                 </div>
             </div>

@@ -2,7 +2,7 @@
   background: white;
   font-family: sans-serif;
   height: 100vh;
-  width: 75vw;
+  width: 60vw;
   box-shadow: 4px 0px 4px rgba(34,34,34,0.3);
   text-align: left;
   padding: 2rem;
@@ -17,13 +17,13 @@
     transform: translateX(0%);
 }
 
+#slidemenu ul {
+  list-style: none;
+}
+
 #slidemenu a {
     color:black;
-    font-size: 2rem;
-    text-transform: uppercase;
     padding: 2rem 0;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
     text-decoration: none;
     transition: color 0.3s linear;
     box-shadow: none;
