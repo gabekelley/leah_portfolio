@@ -1,6 +1,7 @@
 import React from "react"
-import Header from '../components/header/header';
+import Header from '../components/header/header'
 import styled from "styled-components"
+import '../styles/styles.css'
 
 class Layout extends React.Component {
   render() {
@@ -14,8 +15,8 @@ class Layout extends React.Component {
             marginRight: `auto`,
           }}
         >
-          <Header />
-          <main style={{marginTop: '74px'}}>{children}</main>
+          <Header location={this.props.location} />
+          <main>{children}</main>
         </div>
       </Wrapper>
     )
