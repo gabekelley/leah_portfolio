@@ -11,14 +11,14 @@ class Projects extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMdx.edges
+    const projects = data.allMdx.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Bio />
         <div style={{ margin: "20px 0 40px" }}>
-          {posts.map(({ node }) => {
+          {projects.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <div key={node.fields.slug}>
@@ -29,17 +29,12 @@ class Projects extends React.Component {
                 >
                   <Link
                     style={{ boxShadow: `none` }}
-                    to={`blog${node.fields.slug}`}
+                    to={`projects${node.fields.slug}`}
                   >
                     {title}
                   </Link>
                 </h3>
                 <small>{node.frontmatter.date}</small>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
               </div>
             )
           })}
@@ -54,6 +49,7 @@ class Projects extends React.Component {
 
 export default Projects
 
+
 export const pageQuery = graphql`
   query {
     site {
@@ -64,14 +60,12 @@ export const pageQuery = graphql`
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            description
           }
         }
       }

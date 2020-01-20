@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
     // edit below
-    title: `Gatsby Starter Personal Blog`,
+    title: `Leah Schmidt`,
     author: `Kyle Matthews`,
-    description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `Leah Schmidt is a deigner and illustrator based in Brooklyn, NY.`,
+    siteUrl: `https://leahschmidt.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `leahstheword`,
     },
   },
   plugins: [
@@ -17,13 +17,6 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed-mdx`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

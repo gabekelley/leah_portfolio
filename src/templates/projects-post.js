@@ -19,7 +19,7 @@ class ProjectPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
+        <h1>nk</h1>
         <p
           style={{
             ...scale(-1 / 5),
@@ -84,7 +84,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        description
       }
     }
   }
