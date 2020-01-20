@@ -1,14 +1,25 @@
 import React from 'react';
-// import { Link } from 'gatsby';
-import projectMenuStyles from './project-menu.module.css';
+import './project-menu.css';
 
 class ProjectMenu extends React.Component {
     render() { 
+        var visibility = 'hide';
+
+        if (this.props.visibility) {
+            visibility = 'show';
+        }
+
         return ( 
-            <div>
-                <div className={projectMenuStyles.trigger}>
-                    |||
-                </div>
+            <div role="menu" tabIndex={0} id="slidemenu" onMouseDown={this.props.handleMouseDown} className={visibility}>
+                <li>
+                    <a href="/">Link</a>
+                </li>
+                <li>
+                    <a href="/">Link</a>
+                </li>
+                <li>
+                    <a href="/">Link</a>
+                </li>
             </div>
          );
     }
