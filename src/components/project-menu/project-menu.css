@@ -3,7 +3,6 @@
   font-family: sans-serif;
   height: 100vh;
   width: 60vw;
-  box-shadow: 4px 0px 4px rgba(34,34,34,0.3);
   text-align: left;
   padding: 2rem;
   position: absolute;
@@ -15,6 +14,7 @@
 
 #slidemenu.show {
     transform: translateX(0%);
+    box-shadow: 4px 0px 4px rgba(34,34,34,0.3);
 }
 
 #slidemenu ul {
