@@ -13,15 +13,12 @@ class Header extends React.Component {
         }
 
         this.toggleMenu = this.toggleMenu.bind(this);
-        this.handleMouseDown = this.handleMouseDown.bind(this);
+        this.handleMouseDownTrigger = this.handleMouseDownTrigger.bind(this);
     }
 
-    handleMouseDown(e) {
+    handleMouseDownTrigger(e) {
         this.toggleMenu();
-     
-        console.log("clicked");
-        e.stopPropagation();
-      }
+    }
 
     toggleMenu() {
         this.setState({
@@ -54,9 +51,8 @@ class Header extends React.Component {
 
         return ( 
             <div className={headerStyles.container}>
-                <ProjectTrigger handleMouseDown={this.handleMouseDown} />
-                <ProjectMenu handleMouseDown={this.handleMouseDown}
-                            visibility={this.state.visible}
+                <ProjectTrigger handleMouseDown={this.handleMouseDownTrigger} />
+                <ProjectMenu visibility={this.state.visible}
                             projects={projects} />
                 <Link to="/">Leah Schmidt</Link>
                 <div className={headerStyles.thirdcolumn}>
