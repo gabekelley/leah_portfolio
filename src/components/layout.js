@@ -6,11 +6,12 @@ import '../styles/styles.css'
 class Layout extends React.Component {
   render() {
     const { children } = this.props
-    const projects = this.props.projects
+    const products = this.props.products
+    const illustrations = this.props.illustrations
     
     return (
       <Wrapper>
-          <Header projects={projects} location={this.props.location} />
+          <Header products={products} illustrations={illustrations} location={this.props.location} />
           <main>{children}</main>
       </Wrapper>
     )

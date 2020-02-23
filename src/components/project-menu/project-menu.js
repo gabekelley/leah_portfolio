@@ -24,9 +24,9 @@ class ProjectMenu extends React.Component {
     }
 
     handleClickOutside(e) {
-        if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
-            alert('clicked outside');
-        }
+        // if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
+        //     alert('clicked outside');
+        // }
     }
 
     render() { 
@@ -36,11 +36,12 @@ class ProjectMenu extends React.Component {
             visibility = 'show';
         }
 
-        const projects = this.props.projects
+        const illustrationProjects = this.props.illustrations
+        const productProjects = this.props.products
 
         return ( 
             <div role="menu" ref={this.setWrapperRef} tabIndex={0} id="slidemenu" className={visibility}>
-                <ProjectMenuList projects={projects} />
+                <ProjectMenuList products={productProjects} illustrations={illustrationProjects} />
             </div>
          );
     }

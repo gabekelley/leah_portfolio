@@ -1,8 +1,8 @@
 ---
-title: Hello World
+title: Hello World prod
 date: "2015-05-01T22:12:03.284Z"
 type: "project"
-tag: "web"
+tag: "product"
 ---
 
 This is my first post on my new fake blog! How exciting!

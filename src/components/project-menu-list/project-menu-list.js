@@ -7,10 +7,24 @@ class ProjectMenuList extends React.Component {
         this.state = {  }
     }
     render() { 
-        const projects = this.props.projects
+        const products = this.props.products
+        const illustrations = this.props.illustrations
+
         return ( 
             <ul>
-            {projects.map(({ node }) => {
+            <h3>Product + Design</h3>
+            {products.map(({ node }) => {
+                const title = node.frontmatter.title || node.fields.slug
+                return (
+                    <li>
+                        <Link key={node.fields.slug} to={`/projects${node.fields.slug}`}>
+                            {title}
+                        </Link>
+                    </li>
+                )
+              })}
+              <h3>Illustrations</h3>
+              {illustrations.map(({ node }) => {
                 const title = node.frontmatter.title || node.fields.slug
                 return (
                     <li>
