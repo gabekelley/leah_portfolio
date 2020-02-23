@@ -1,5 +1,5 @@
 import React from "react"
-// import { Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -9,18 +9,16 @@ import IndexGrid from "../components/index-grid/index-grid"
 
 class IndexPage extends React.Component {
   render() {
-    const siteTitle = "Leah Schmidt"
+    const { data } = this.props
+    const siteTitle = data.site.siteMetadata.title
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={siteTitle} projects={data.allMdx.edges}>
         <SEO
           title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />  
+        />
         <Billboard />
-        {/* <Link to="/projects/">
-          <Button marginTop="35px">Go to Projects</Button>
-        </Link> */}
         <IndexGrid />
       </Layout>
     )
@@ -28,3 +26,26 @@ class IndexPage extends React.Component {
 }
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+          }
+        }
+      }
+    }
+  }
+`

@@ -32,6 +32,7 @@ class Header extends React.Component {
     render() { 
         const { location } = this.props
         const aboutPath = `${__PATH_PREFIX__}/about/`
+        const projects = this.props.projects
 
         let thirdColumn
 
@@ -55,7 +56,8 @@ class Header extends React.Component {
             <div className={headerStyles.container}>
                 <ProjectTrigger handleMouseDown={this.handleMouseDown} />
                 <ProjectMenu handleMouseDown={this.handleMouseDown}
-                            visibility={this.state.visible} />
+                            visibility={this.state.visible}
+                            projects={projects} />
                 <Link to="/">Leah Schmidt</Link>
                 <div className={headerStyles.thirdcolumn}>
                     {thirdColumn}

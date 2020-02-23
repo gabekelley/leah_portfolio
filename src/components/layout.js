@@ -6,18 +6,12 @@ import '../styles/styles.css'
 class Layout extends React.Component {
   render() {
     const { children } = this.props
+    const projects = this.props.projects
     
     return (
       <Wrapper>
-        <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-          }}
-        >
-          <Header location={this.props.location} />
+          <Header projects={projects} location={this.props.location} />
           <main>{children}</main>
-        </div>
       </Wrapper>
     )
   }
