@@ -13,7 +13,7 @@ class Projects extends React.Component {
     const projects = data.allMdx.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={siteTitle} projects={projects}>
         <SEO title="All posts" />
         <div style={{ margin: "20px 0 40px" }}>
           {projects.map(({ node }) => {

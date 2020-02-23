@@ -5,7 +5,7 @@ class ProjectTrigger extends React.Component {
     render() { 
         return ( 
             <button className="trigger" id="menu-button" onMouseDown={this.props.handleMouseDown}>
-                |||
+                >
             </button>
          );
     }

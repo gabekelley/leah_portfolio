@@ -19,7 +19,6 @@ class ProjectMenuList extends React.Component {
                         {title}
                       </Link>
                     </h3>
-                    <small>{node.frontmatter.date}</small>
                   </div>
                 )
               })}
