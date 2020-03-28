@@ -2,28 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 import headerStyles from './header.module.css';
 import ProjectMenu from '../project-menu/project-menu.js';
-import ProjectTrigger from '../project-trigger/project-trigger.js';
 
 class Header extends React.Component {
     constructor(props, context) {
         super(props, context);
-        
-        this.state = {
-            visible: false
-        }
-
-        this.toggleMenu = this.toggleMenu.bind(this);
-        this.handleMouseDownTrigger = this.handleMouseDownTrigger.bind(this);
-    }
-
-    handleMouseDownTrigger(e) {
-        this.toggleMenu();
-    }
-
-    toggleMenu() {
-        this.setState({
-            visible: !this.state.visible
-        })
     }
 
     render() { 
@@ -48,13 +30,9 @@ class Header extends React.Component {
             )
         }
 
-        console.log(thirdColumn)
-
         return ( 
             <div className={headerStyles.container}>
-                <ProjectTrigger handleMouseDown={this.handleMouseDownTrigger} />
-                <ProjectMenu visibility={this.state.visible}
-                            products={products}
+                <ProjectMenu products={products}
                             illustrations={illustrations} />
                 <Link to="/">Leah Schmidt</Link>
                 <div className={headerStyles.thirdcolumn}>
