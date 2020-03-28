@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import './project-menu-list.css';
+import ProjectMenuTrigger from '../project-trigger/project-trigger.js';
 
 class ProjectMenuList extends React.Component {
     constructor(props) {
@@ -11,8 +12,17 @@ class ProjectMenuList extends React.Component {
         const products = this.props.products
         const illustrations = this.props.illustrations
 
+        var visibility = 'hide';
+
+        if (this.props.menuVisibility) {
+            visibility = 'show';
+        }
+
+
         return ( 
-            <ul className="project-menu-list">
+            <ul className={`project-menu-list ${visibility}`}
+                onMouseDown={this.props.handleMouseDown}
+                >
                 <div className="project-menu__product">
                     <h3>Product + Design</h3>
                     {products.map(({ node }) => {

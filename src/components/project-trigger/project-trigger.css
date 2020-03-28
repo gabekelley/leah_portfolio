@@ -6,3 +6,18 @@
     appearance: none;
     border: 0;
 }
+
+.trigger.true {
+    position: absolute;
+    visibility: visible;
+    left: calc(60vw - 48px);
+    height: 48px;
+    width: 48px;
+    transition: left 0.44s ease-in-out;
+}
+
+.trigger.false {
+    visibility: hidden;
+    left: -48px;
+    transition: left 0.4s ease-in-out;
+}
