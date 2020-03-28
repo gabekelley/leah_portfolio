@@ -1,6 +1,21 @@
+@import url("https://use.typekit.net/mek3zrd.css");
+
 html {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 *, *:before, *:after {
     box-sizing: inherit;
+}
+
+body {
+    font-family: letter-gothic-std;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.hide {
+    display: none;
 }

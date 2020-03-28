@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 import Button from "../components/button"
 
 class Projects extends React.Component {

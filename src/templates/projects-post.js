@@ -4,7 +4,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
 
 class ProjectPostTemplate extends React.Component {
   render() {
