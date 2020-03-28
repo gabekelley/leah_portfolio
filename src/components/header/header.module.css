@@ -7,6 +7,10 @@
     width: 100%;
 }
 
+.menu-nav {
+    position: relative;
+}
+
 .container a {
     color: black;
     text-decoration: none;
