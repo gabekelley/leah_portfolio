@@ -1,4 +1,8 @@
 .trigger {
     width: 48px;
     height: 48px;
+    background: white;
+    box-shadow: none;
+    appearance: none;
+    border: 0;
 }
