@@ -17,8 +17,8 @@ class IndexPage extends React.Component {
           title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Billboard />
-        <IndexGrid />
+        <Billboard patterns={data.Patterns.edges} />
+        <IndexGrid spots={data.Spots.edges} />
       </Layout>
     )
   }
@@ -31,6 +31,34 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    Patterns: allFile(filter: {extension: {eq: "png"}, relativeDirectory: {eq: "patterns"}}) {
+      edges {
+        node {
+          id
+          relativeDirectory
+          childImageSharp {
+            id
+            fluid {
+              src
+            }
+          }
+        }
+      }
+    }
+    Spots: allFile(filter: {extension: {eq: "png"}, relativeDirectory: {eq: "spots"}}) {
+      edges {
+        node {
+          id
+          relativeDirectory
+          childImageSharp {
+            id
+            fluid {
+              src
+            }
+          }
+        }
       }
     }
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {

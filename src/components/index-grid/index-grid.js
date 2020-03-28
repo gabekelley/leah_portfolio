@@ -3,19 +3,22 @@ import styles from './index-grid.module.css';
 
 class ProjectGrid extends React.Component {
   render() {
+    const spots = this.props.spots
     
     return (
       <div className={styles.container}>
-          <div className={styles.box}></div>
-          <div className={styles.box}></div>
-          <div className={styles.box}></div>
-          <div className={styles.box}></div>
-          <div className={styles.box}></div>
-          <div className={styles.box}></div>
+        {spots.map(({ node }) => {
+          return (
+            <div className={styles.box}>
+              <img src={node.childImageSharp.fluid.src} />
+            </div>
+          )
+          })}
       </div>
     )
   }
 }
+
 
 export default ProjectGrid
 
