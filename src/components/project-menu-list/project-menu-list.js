@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import './project-menu-list.css';
-import ProjectMenuTrigger from '../project-trigger/project-trigger.js';
+import './styles.scss';
 
 class ProjectMenuList extends React.Component {
     constructor(props) {

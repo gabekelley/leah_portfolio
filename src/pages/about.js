@@ -8,7 +8,7 @@ class AboutPage extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = "Leah Schmidt"
-    const projects = data.allMdx.edges
+    // const projects = data.allMdx.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}  products={data.ProductProjects.edges} illustrations={data.IllustrationProjects.edges}>

@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    a {
+        color: black;
+        text-decoration: none;
+        box-shadow: none;
+    }
+
+}
+
+.menu-nav {
+    position: relative;
+}
+
+.thirdcolumn {
+    padding-right: 24px;
+}

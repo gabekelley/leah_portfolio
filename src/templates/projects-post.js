@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import './styles.css';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,6 +12,9 @@ class ProjectPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
     const { data } = this.props
+    const images = this.props.data.allFile.edges
+
+    console.log(images.length)
 
     return (
       <Layout location={this.props.location} title={siteTitle} products={data.ProductProjects.edges} illustrations={data.IllustrationProjects.edges}>
@@ -18,13 +22,18 @@ class ProjectPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
+        <div id="project">
         <h1>{post.frontmatter.title}</h1>
-        <p>
-          {post.frontmatter.date}
-        </p>
         <MDXRenderer>{post.body}</MDXRenderer>
+        {images.map(({ node }) => {
+            return (
+                <li>
+                    <img src={node.childImageSharp.fluid.src} />
+                </li>
+            )
+        })}
 
-        <ul>
+        <ul className="pagination">
           <li>
             {previous && (
               <Link to={`projects${previous.fields.slug}`} rel="prev">
@@ -40,6 +49,7 @@ class ProjectPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        </div>
       </Layout>
     )
   }
@@ -65,6 +75,19 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             tag
+          }
+        }
+      }
+    }
+    allFile(filter: {extension: {eq: "png"}}) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            id
+            fluid {
+              src
+            }
           }
         }
       }

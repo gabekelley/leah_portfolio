@@ -1,13 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import headerStyles from './header.module.css';
+import './styles.scss';
 import ProjectMenu from '../project-menu/project-menu.js';
 
 class Header extends React.Component {
-    constructor(props, context) {
-        super(props, context);
-    }
-
     render() { 
         const { location } = this.props
         const aboutPath = `${__PATH_PREFIX__}/about/`
@@ -31,11 +27,11 @@ class Header extends React.Component {
         }
 
         return ( 
-            <div className={headerStyles.container}>
+            <div className="header">
                 <ProjectMenu products={products}
                             illustrations={illustrations} />
                 <Link to="/">Leah Schmidt</Link>
-                <div className={headerStyles.thirdcolumn}>
+                <div className="thirdcolumn">
                     {thirdColumn}
                 </div>
             </div>

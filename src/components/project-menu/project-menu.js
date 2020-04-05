@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectMenuList from '../project-menu-list/project-menu-list.js';
-import './project-menu.css';
+import './styles.scss';
 import MenuButton from '../project-trigger/project-trigger.js';
 
 class ProjectMenu extends React.Component {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './project-trigger.css';
+import './styles.scss';
 import Icon from '../../assets/menu.svg';
 
 class ProjectTrigger extends React.Component {
