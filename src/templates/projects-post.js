@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import './styles.css';
+import './styles.scss';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -25,14 +25,6 @@ class ProjectPostTemplate extends React.Component {
         <div id="project">
         <h1>{post.frontmatter.title}</h1>
         <MDXRenderer>{post.body}</MDXRenderer>
-        {images.map(({ node }) => {
-            return (
-                <li>
-                    <img src={node.childImageSharp.fluid.src} />
-                </li>
-            )
-        })}
-
         <ul className="pagination">
           <li>
             {previous && (

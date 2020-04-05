@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.scss';
+import Icon from '../../assets/leah-logo.svg';
 
 class Billboard extends React.Component {
     render() { 
@@ -8,7 +9,9 @@ class Billboard extends React.Component {
             <div className="billboard">
                 {patterns.map(({ node }) => {
                     return (
-                        <div className="billboard__container" style={{backgroundImage: `url("${node.childImageSharp.fluid.src}")`}}></div>
+                        <div className="billboard__container" style={{backgroundImage: `url("${node.childImageSharp.fluid.src}")`}}>
+                            <Icon />
+                        </div>
                     )
                 })}
             </div>

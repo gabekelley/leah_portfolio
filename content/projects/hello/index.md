@@ -7,4 +7,5 @@ tag: "product"
 
 ## Cherry Picks site redesign and illustration
 
-
+![this is an image](1.png)
+![this is an image](2.png)
