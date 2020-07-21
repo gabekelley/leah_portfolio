@@ -25,22 +25,19 @@ class ProjectPostTemplate extends React.Component {
         <div id="project">
         <h1>{post.frontmatter.title}</h1>
         <MDXRenderer>{post.body}</MDXRenderer>
-        <ul className="pagination">
-          <li>
+        <div className="pagination">
             {previous && (
-              <Link to={`projects${previous.fields.slug}`} rel="prev">
-                ← {previous.frontmatter.title}
+              <Link to={`projects${previous.fields.slug}`} rel="prev" className="previous">
+                <span>← {previous.frontmatter.title}</span>
               </Link>
             )}
-          </li>
-          <li>
+            <a href="#" className="back-to-top"><span>Back to top</span></a>
             {next && (
-              <Link to={`projects${next.fields.slug}`} rel="next">
-                {next.frontmatter.title} →
+              <Link to={`projects${next.fields.slug}`} rel="next" className="next">
+                <span>{next.frontmatter.title} →</span>
               </Link>
             )}
-          </li>
-        </ul>
+        </div>
         </div>
       </Layout>
     )

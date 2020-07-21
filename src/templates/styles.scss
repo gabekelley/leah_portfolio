@@ -8,20 +8,29 @@
     }
 }
 
-ul.pagination {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.pagination {
     display: flex;
 
-    li {
+    a {
         flex: 1;
-        text-align: left;
-        background: rgba(0,0,0,0.1);
+        height: 265px;
+        text-align: center;
         padding: 3rem;
+        align-items: center;
+        display: flex;
+        justify-content: center;;
     }
 
-    li:hover {
-        background: rgba(0,0,0,0.15);
+    a.previous {
+        background: #C7E2D1;
+    }
+
+    a.back-to-top {
+        background: #64AE61;
+        border-radius: 132px;
+    }
+
+    a.next {
+        background: #CAAD3D;
     }
 }
